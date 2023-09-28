@@ -22,11 +22,11 @@ public class BigBrotherBot extends TelegramLongPollingBot {
     private Map<String, Boolean> buttonStates = new HashMap<>();
 
     public String getBotUsername() {
-        return "ControlOfAttendance_Bot";
+        return "MY_BOTNAME";
     }
 
     public String getBotToken() {
-        return "6521254218:AAHENeMjcXr7R6jphZ2EoU0Oa6drKRK58u8";
+        return "MY_TOKEN";
     }
 
     public void onUpdateReceived(Update update) {
@@ -194,6 +194,7 @@ public class BigBrotherBot extends TelegramLongPollingBot {
         }
     }
 
+<<<<<<< HEAD
 //        if (update.hasCallbackQuery()) {
 //            for (Employee value : Employee.values()) {
 //                if (update.getCallbackQuery().getData().equals(value.getName())) {
@@ -260,3 +261,24 @@ public class BigBrotherBot extends TelegramLongPollingBot {
 //            }
 //        } ЛУЧШИЙ НА ДАННЫЙ МОМЕНТ ХЭНДЛ КОЛБЭЕ, ОБНОВЛЯЕТ КНОПКИ, НО И ТЕКС ОБНОВЛЯЕТ (А ЭТОГО НЕ НАДО)
 }
+=======
+    public String listToString(List<String> list) {
+        StringBuilder result = new StringBuilder();
+        int index = 0;
+
+        for (String item : list) {
+            boolean found = false;
+            for (Employee employee : Employee.values()) {
+                if (employee.getName().equals(item)) {
+                    found = true;
+                    break;
+                }
+            }
+            if (found) {
+                result.append("\t\t\t\t").append(++index).append(") ").append(item).append("\n");
+            }
+        }
+        return result.toString();
+    }
+}
+>>>>>>> c5236bc2edfdc15bcbd54a853e9414b6300bf4f3
