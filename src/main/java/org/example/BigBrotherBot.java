@@ -17,11 +17,11 @@ public class BigBrotherBot extends TelegramLongPollingBot {
     private final List<String> selectedEmployee = new ArrayList<>();
 
     public String getBotUsername() {
-        return "ControlOfAttendance_Bot";
+        return "MY_BOTNAME";
     }
 
     public String getBotToken() {
-        return "6521254218:AAHENeMjcXr7R6jphZ2EoU0Oa6drKRK58u8";
+        return "MY_TOKEN";
     }
 
     public void onUpdateReceived(Update update) {
