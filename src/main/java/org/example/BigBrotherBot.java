@@ -2,23 +2,22 @@ package org.example;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Message;
-import org.telegram.telegrambots.meta.api.objects.MessageEntity;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class BigBrotherBot extends TelegramLongPollingBot {
-
-    private static boolean theObjectIsSelected = false;
+    private String selectedObject = "";
+    private final List<String> selectedEmployee = new ArrayList<>();
 
     public String getBotUsername() {
         return "ControlOfAttendance_Bot";
-
     }
 
     public String getBotToken() {
@@ -26,108 +25,114 @@ public class BigBrotherBot extends TelegramLongPollingBot {
     }
 
     public void onUpdateReceived(Update update) {
-        if (update.hasCallbackQuery()) {
-            callbackHandler(update);
+
+        if (update.hasCallbackQuery() && !update.getCallbackQuery().getData().equals("\"✅Отправить✅\"")) {
+            try {
+                handleEntity(update);
+            } catch (TelegramApiException e) {
+                throw new RuntimeException("Ошибка метода handleEntity: ", e);
+            }
+        } else {
+            try {
+                handleMessage(update.getMessage());
+            } catch (TelegramApiException e) {
+                throw new RuntimeException("Ошибка метода handleMessage: ", e);
+            }
         }
 
-        if (update.hasMessage() && update.getMessage().hasText()) {
+        if (update.hasCallbackQuery() && update.getCallbackQuery().getData().equals("✅Отправить✅")) {
             try {
-                commandHandler(update);
+                endOf(update);
             } catch (TelegramApiException e) {
-                throw new RuntimeException("Сообщение не было отправлено: ", e);
+                throw new RuntimeException(e);
             }
         }
     }
 
-    public void commandHandler(Update update) throws TelegramApiException {
-        Message message = update.getMessage();
+    public void handleMessage(Message message) throws TelegramApiException {
+        if (message.hasText() && message.getText() != null) {
 
-        if (message.hasText() && message.hasEntities()) {
-            Optional<MessageEntity> commandEntity = message
-                    .getEntities()
-                    .stream().filter(e -> "bot_command".equals(e.getType()))
-                    .findFirst();
-            if (commandEntity.isPresent()) {
-                String command = message.getText().substring(commandEntity.get().getOffset(), commandEntity.get().getLength());
+            List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
 
-                List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
-                List<List<InlineKeyboardButton>> buttons2 = new ArrayList<>();
+            for (ConstructionSite value : ConstructionSite.values()) {
+                InlineKeyboardButton button = InlineKeyboardButton.builder()
+                        .text(value.getBuildName())
+                        .callbackData(value.getBuildName())
+                        .build();
+                buttons.add(Collections.singletonList(button));
+            }
 
-                for (ConstructionSite building : ConstructionSite.values()) {          // Кнопки объектов стройки
-                    InlineKeyboardButton button = InlineKeyboardButton.builder()
-                            .text(building.getBuildName())
-                            .callbackData("Объект: " + building.getBuildName())
-                            .build();
-                    buttons.add(Collections.singletonList(button));
-                }
+            String text = message.getText();
 
-                for (Employee value : Employee.values()) {          // Кнопки работников
-                    InlineKeyboardButton button = InlineKeyboardButton.builder()
-                            .text(value.getName())
-                            .callbackData(value.getName())
-                            .build();
-                    buttons2.add(Collections.singletonList(button));
-                }
+            if (text.contains("/start") || text.equals("Старт")) {
+                execute(SendMessage.builder()
+                        .chatId(message.getChatId()).text("*" + "Выберите объект: " + "*").parseMode("Markdown")
+                        .replyMarkup(InlineKeyboardMarkup.builder().keyboard(buttons).build())
+                        .build());
+            }
+        }
+    }
 
-                if (command.equals("/start")) {
+    public void handleEntity(Update update) throws TelegramApiException {
+        if (update.hasCallbackQuery()) {
+            String data = update.getCallbackQuery().getData();
+
+            for (ConstructionSite value : ConstructionSite.values()) {
+                if (data.equals(value.getBuildName())) {
+                    selectedObject = value.getBuildName();
+                    List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
+
+                    for (Employee people : Employee.values()) {
+                        InlineKeyboardButton button = InlineKeyboardButton.builder()
+                                .text(people.getName())
+                                .callbackData(people.getName())
+                                .build();
+                        buttons.add(Collections.singletonList(button));
+                    }
+
                     execute(SendMessage.builder()
-                            .chatId(message.getChatId().toString())
-                            .text("Выберите объект: ")
+                            .chatId(update.getCallbackQuery().getMessage().getChatId())
+                            .text("*" + "Выберите сотрудника:  " + "*").parseMode("Markdown")
                             .replyMarkup(InlineKeyboardMarkup.builder().keyboard(buttons).build())
                             .build());
-
                 }
-                for (ConstructionSite value : ConstructionSite.values()) {
-                    if (callbackHandler(update).equals(value.getBuildName())) {
-                        execute(SendMessage.builder()
-                                .chatId(message.getChatId())
-                                .text("Выберите работников из списка: ")
-                                .replyMarkup(InlineKeyboardMarkup.builder().keyboard(buttons2).build())
-                                .build());
-                    }
-                }
+            }
+            if (!data.equals("✅Отправить✅")) {
+                selectedEmployee.add(data);
             }
         }
     }
 
-    public String callbackHandler(Update update) {
-        String result = "";
-        if (update.hasCallbackQuery()) {
+    public void endOf(Update update) throws TelegramApiException {
+        if (update.hasCallbackQuery() && update.getCallbackQuery().getData().equals("✅Отправить✅")) {
 
-            CallbackQuery callbackQuery = update.getCallbackQuery();
-            String data = callbackQuery.getData();
+            String emp = listToString(selectedEmployee);
+            StringBuilder finalPhraseBuild = new StringBuilder();
+            String chatID = update.getCallbackQuery().getMessage().getChatId().toString();
 
-            for (Employee value : Employee.values()) {
-                if (data.equals(value.getName())) {
-                    SendMessage responseMessage = new SendMessage(callbackQuery.getMessage().getChatId().toString(),
-                            data + " задействован на объекте.");
-                    try {
-                        result = data + " задействован на объекте.";
-                        execute(responseMessage);
-                    } catch (TelegramApiException e) {
-                        e.printStackTrace();
-                    }
+            finalPhraseBuild.append("*Объект: *").append(selectedObject).append("\n").append("*Бригада: \n*");
+            finalPhraseBuild.append(emp);
+            execute(SendMessage.builder().chatId(chatID).text(String.format(finalPhraseBuild.toString())).parseMode("Markdown").build());
+            selectedEmployee.clear();
+        }
+    }
+
+    public String listToString(List<String> list) {
+        StringBuilder result = new StringBuilder();
+        int index = 0;
+
+        for (String item : list) {
+            boolean found = false;
+            for (Employee employee : Employee.values()) {
+                if (employee.getName().equals(item)) {
+                    found = true;
+                    break;
                 }
             }
-        }
-
-        if (update.hasCallbackQuery()) {
-
-            CallbackQuery callbackQuery = update.getCallbackQuery();
-            String data = callbackQuery.getData();
-
-            if (data.startsWith("Объект: ")) {
-                String selectedObject = data.replace("Объект: ", "");
-                SendMessage responseMessage = new SendMessage(callbackQuery.getMessage().getChatId().toString(),
-                        "Вы выбрали объект: " + selectedObject);
-                try {
-                    result = "Вы выбрали объект: " + selectedObject;
-                    execute(responseMessage);
-                } catch (TelegramApiException e) {
-                    e.printStackTrace();
-                }
+            if (found) {
+                result.append("\t\t\t\t").append(++index).append(") ").append(item).append("\n");
             }
         }
-        return result;
+        return result.toString();
     }
 }

@@ -12,7 +12,7 @@ public enum ConstructionSite {
         this.buildName = buildName;
     }
 
-    private final String buildName;
+    String buildName;
 
     public String getBuildName() {
         return buildName;
