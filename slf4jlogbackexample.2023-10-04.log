@@ -1,0 +1,346 @@
+04.10.2023 12:18:56.879 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at org.example.BigBrotherBot.callBackHandle(BigBrotherBot.java:113)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:60)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 13:18:41.988 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at org.example.BigBrotherBot.callBackHandle(BigBrotherBot.java:74)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:35)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 13:20:12.947 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at org.example.BigBrotherBot.callBackHandle(BigBrotherBot.java:73)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:35)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 13:20:57.595 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - text is marked non-null but is null
+java.lang.NullPointerException: text is marked non-null but is null
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.<init>(SendMessage.java:35)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage$SendMessageBuilder.build(SendMessage.java:36)
+	at org.example.BigBrotherBot.callBackHandle(BigBrotherBot.java:75)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:35)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 15:23:38.598 [ControlOfAttendance_Bot Telegram Connection] ERROR o.t.t.u.DefaultBotSession - Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:328)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:484)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:478)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1465)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1069)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+04.10.2023 15:23:39.157 [ControlOfAttendance_Bot Telegram Connection] ERROR o.t.t.u.DefaultBotSession - Этот хост неизвестен (api.telegram.org)
+java.net.UnknownHostException: Этот хост неизвестен (api.telegram.org)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:934)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1543)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:852)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+04.10.2023 16:41:43.772 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:26)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 16:43:28.693 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:26)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 16:43:29.981 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:26)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 16:43:30.360 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:26)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 16:43:30.695 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:26)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 16:43:31.043 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:26)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 16:43:35.398 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:26)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 16:44:01.694 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because "message" is null
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:26)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 17:26:31.128 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Ошибка обработки CallBack: 
+java.lang.RuntimeException: Ошибка обработки CallBack: 
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException: MessageId parameter can't be empty if inlineMessageId is not present
+	at org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup.validate(EditMessageReplyMarkup.java:82)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendMethodRequest(DefaultAbsSender.java:1121)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1095)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at org.example.BigBrotherBot.callBackHandle(BigBrotherBot.java:80)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:31)
+	... 3 common frames omitted
+04.10.2023 17:50:38.064 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getMessageId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getMessageId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at org.example.BigBrotherBot.callBackHandle(BigBrotherBot.java:70)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:32)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 17:51:19.478 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Ошибка обработки CallBack: 
+java.lang.RuntimeException: Ошибка обработки CallBack: 
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:34)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException: ChatId parameter can't be empty if inlineMessageId is not present
+	at org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText.validate(EditMessageText.java:129)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendMethodRequest(DefaultAbsSender.java:1121)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1095)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at org.example.BigBrotherBot.callBackHandle(BigBrotherBot.java:70)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:32)
+	... 3 common frames omitted
+04.10.2023 17:52:16.515 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at org.example.BigBrotherBot.callBackHandle(BigBrotherBot.java:70)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:32)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 23:18:54.003 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Index 1 out of bounds for length 0
+java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
+	at java.base/java.util.Objects.checkIndex(Objects.java:361)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.example.Keyboard.initEmployeeKeyboard(Keyboard.java:67)
+	at org.example.BigBrotherBot.callbackHandle(BigBrotherBot.java:83)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 23:19:05.873 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Index 17 out of bounds for length 17
+java.lang.IndexOutOfBoundsException: Index 17 out of bounds for length 17
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
+	at java.base/java.util.Objects.checkIndex(Objects.java:361)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.example.Keyboard.initEmployeeKeyboard(Keyboard.java:67)
+	at org.example.BigBrotherBot.callbackHandle(BigBrotherBot.java:83)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+04.10.2023 23:19:48.254 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Ошибка обработки CallBack: 
+java.lang.RuntimeException: Ошибка обработки CallBack: 
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup query: [400] Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54)
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseSerializable(PartialBotApiMethod.java:44)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseFromPossibilities(BotApiMethodSerializable.java:31)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseMessageOrBoolean(BotApiMethodSerializable.java:24)
+	at org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup.deserializeResponse(EditMessageReplyMarkup.java:72)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1096)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at org.example.BigBrotherBot.callbackHandle(BigBrotherBot.java:80)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:36)
+	... 3 common frames omitted
+04.10.2023 23:21:02.949 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Ошибка обработки CallBack: 
+java.lang.RuntimeException: Ошибка обработки CallBack: 
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup query: [400] Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54)
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseSerializable(PartialBotApiMethod.java:44)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseFromPossibilities(BotApiMethodSerializable.java:31)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseMessageOrBoolean(BotApiMethodSerializable.java:24)
+	at org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup.deserializeResponse(EditMessageReplyMarkup.java:72)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1096)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at org.example.BigBrotherBot.callbackHandle(BigBrotherBot.java:80)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:36)
+	... 3 common frames omitted
+04.10.2023 23:26:35.768 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Ошибка обработки CallBack: 
+java.lang.RuntimeException: Ошибка обработки CallBack: 
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:35)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException: ChatId parameter must be empty if inlineMessageId is provided
+	at org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText.validate(EditMessageText.java:136)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendMethodRequest(DefaultAbsSender.java:1121)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1095)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at org.example.BigBrotherBot.callbackHandle(BigBrotherBot.java:71)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:33)
+	... 3 common frames omitted
+04.10.2023 23:28:56.879 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Ошибка обработки CallBack: 
+java.lang.RuntimeException: Ошибка обработки CallBack: 
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup query: [400] Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54)
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseSerializable(PartialBotApiMethod.java:44)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseFromPossibilities(BotApiMethodSerializable.java:31)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseMessageOrBoolean(BotApiMethodSerializable.java:24)
+	at org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup.deserializeResponse(EditMessageReplyMarkup.java:72)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1096)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at org.example.BigBrotherBot.callbackHandle(BigBrotherBot.java:82)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:34)
+	... 3 common frames omitted
+04.10.2023 23:29:31.284 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Ошибка обработки CallBack: 
+java.lang.RuntimeException: Ошибка обработки CallBack: 
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup query: [400] Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54)
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseSerializable(PartialBotApiMethod.java:44)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseFromPossibilities(BotApiMethodSerializable.java:31)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseMessageOrBoolean(BotApiMethodSerializable.java:24)
+	at org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup.deserializeResponse(EditMessageReplyMarkup.java:72)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1096)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at org.example.BigBrotherBot.callbackHandle(BigBrotherBot.java:83)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:34)
+	... 3 common frames omitted
+04.10.2023 23:45:47.003 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Ошибка обработки CallBack: 
+java.lang.RuntimeException: Ошибка обработки CallBack: 
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup query: [400] Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54)
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseSerializable(PartialBotApiMethod.java:44)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseFromPossibilities(BotApiMethodSerializable.java:31)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseMessageOrBoolean(BotApiMethodSerializable.java:24)
+	at org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup.deserializeResponse(EditMessageReplyMarkup.java:72)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1096)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at org.example.BigBrotherBot.callbackHandle(BigBrotherBot.java:91)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:34)
+	... 3 common frames omitted
+04.10.2023 23:46:37.412 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Ошибка обработки CallBack: 
+java.lang.RuntimeException: Ошибка обработки CallBack: 
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup query: [400] Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54)
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseSerializable(PartialBotApiMethod.java:44)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseFromPossibilities(BotApiMethodSerializable.java:31)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseMessageOrBoolean(BotApiMethodSerializable.java:24)
+	at org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup.deserializeResponse(EditMessageReplyMarkup.java:72)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1096)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at org.example.BigBrotherBot.callbackHandle(BigBrotherBot.java:91)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:34)
+	... 3 common frames omitted
+04.10.2023 23:46:39.494 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Ошибка обработки CallBack: 
+java.lang.RuntimeException: Ошибка обработки CallBack: 
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup query: [400] Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54)
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseSerializable(PartialBotApiMethod.java:44)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseFromPossibilities(BotApiMethodSerializable.java:31)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseMessageOrBoolean(BotApiMethodSerializable.java:24)
+	at org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup.deserializeResponse(EditMessageReplyMarkup.java:72)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1096)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at org.example.BigBrotherBot.callbackHandle(BigBrotherBot.java:91)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:34)
+	... 3 common frames omitted
+04.10.2023 23:53:50.532 [ControlOfAttendance_Bot Telegram Executor] ERROR o.t.t.u.DefaultBotSession - Ошибка обработки CallBack: 
+java.lang.RuntimeException: Ошибка обработки CallBack: 
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup query: [400] Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54)
+	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseSerializable(PartialBotApiMethod.java:44)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseFromPossibilities(BotApiMethodSerializable.java:31)
+	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodSerializable.deserializeResponseMessageOrBoolean(BotApiMethodSerializable.java:24)
+	at org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup.deserializeResponse(EditMessageReplyMarkup.java:72)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1096)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at org.example.BigBrotherBot.callbackHandle(BigBrotherBot.java:90)
+	at org.example.BigBrotherBot.onUpdateReceived(BigBrotherBot.java:34)
+	... 3 common frames omitted
