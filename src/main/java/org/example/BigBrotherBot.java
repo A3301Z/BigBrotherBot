@@ -23,7 +23,7 @@ public class BigBrotherBot extends TelegramLongPollingBot {
     }
 
     public String getBotToken() {
-        return "6521254218:AAHENeMjcXr7R6jphZ2EoU0Oa6drKRK58u8";
+        return "";
     }
 
     @Override
