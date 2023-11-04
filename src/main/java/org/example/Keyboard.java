@@ -1,6 +1,5 @@
 package org.example;
 
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 import java.util.*;
@@ -49,6 +48,7 @@ public class Keyboard {
         employee.put(15, "Подольский В.");
         employee.put(16, "Труфанов В.");
         employee.put(17, "Готово");
+        employee.put(18, "Назад");
 
         int columnCount = 2; // Количество столбцов
         int rowCount = (int) Math.ceil(employee.size() / (double) columnCount);
